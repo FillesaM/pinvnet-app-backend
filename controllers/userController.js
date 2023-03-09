@@ -40,6 +40,7 @@ const generateToken =(id)=>{
    res.cookie("token", token, {
     path: "/",
     httpOnly: true,
+    domain:"https://pinvent-app-api-hbil.onrender.com/",
     expires: new Date(Date.now() + 1000 * 86400), // 1 day
     sameSite: "none",
     secure: true,
@@ -76,6 +77,7 @@ const token = generateToken(user._id);
 
    res.cookie("token",token,{
     path:"/",
+    domain:"https://pinvent-app-api-hbil.onrender.com/",
     httpOnly:true,
     expires: new Date(Date.now()+ 1000 * 86400),
     sameSite:"none",
@@ -97,6 +99,7 @@ const logoutUser=asyncHandler(async(req,res)=>{
     res.cookie("token","",{
         path:"/",
         httpOnly:true,
+        domain:"https://pinvent-app-api-hbil.onrender.com/",
         expires: new Date(0),
         sameSite:"none",
         secure:true
